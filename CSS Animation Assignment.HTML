@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Animation Assignment</title>
+
+    <style>
+        
+        
+      *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      
+    }
+
+
+ 
+
+
+section {
+        min-height: 100vh;
+        padding: 60px 50px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+/* Task 1, Animated Button */
+
+
+.card  {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 10px 20px #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 70px;
+      }
+
+
+/* Animated Button */
+
+
+.animated-button {
+      background-color: blue;
+      color:  white;
+      border: none;
+      padding: 15px 35px;
+      font-size: 18px;
+      border-radius: 30px;
+
+      margin: 50px auto;      
+      display: block;
+      
+       cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .animated-button:hover {
+      background-color: green;
+      transform: scale(1.1);
+    }
+
+    /* Task 2, Bouncing Ball */
+.ball {
+      width: 100px;
+      height: 100px;
+      margin:  40px auto;
+      background-color: red;
+      border-radius: 50%;
+      animation: bounce 1s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-150px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /*Task 3- Loading Progress Bar */
+    .loading-box {
+      width: 400px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 25px;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, blue, cyan);
+      border-radius: 20px;
+      animation: load 3s linear infinite;
+    }
+
+    @keyframes load {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+ /* Task 4,Animated Image Gallery */
+    
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+
+ 
+
+        </style>
+  </head>
+
+  <body>
+
+    
+                 
+           <!-- Task 1 -->
+             
+           <section id="button">
+              <div class="card">
+                <H1>animated-button</H1>
+              <button class="animated-button">Hover Me</button>          
+        </div>
+        </section>
+        <!-- Task 2 -->
+        
+    <section id="ball">
+              <div class="card">
+              <h2>Bouncing Ball</h2>
+              <div class="ball"></div>
+                        
+        </div>
+        </section>
+                       <!-- Task 3 -->
+
+                       <section id="loadingbox">
+                     <div class="card">
+                       <h3 style="margin-bottom: 15px; text-align:center;">Loading...</h3>                                         
+                     <div class="bar">
+                        <div class="fill"></div>
+                     </div>
+                     </div>
+
+                       </section>
+
+                     
+   <!-- Task 4 -->
+             
+                <section id="AnimatedImageGallery">
+                  
+                 <h1>Animated Image Gallery</h1>
+                              
+
+  <div class="gallery">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV4MApUAlkXHlXoUQKAk-6KNeQVm8HADbG2D4wse9D27xmHI-25wmEiWY&s=10" alt="Image 1">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8o_Vg02tt13X8N4V2nXwXeOjePF-OEdy04QKmKsbmXA&s=10" alt="Image 2">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu0xuAZFjBuOI4isouUaMeRzdTdhXwQv5AvJBD1ehypw&s=10" alt="Image 3">
+    <img src="https://img.magnific.com/premium-photo/photograph-12-15-age-indian-school-girl-boys-students-holding-books-clear-facial-features-white-background-ar-32-style-raw-v-6-job-id-52618d9f8589484b87c969cc439d417e_939033-131154.jpg?semt=ais_hybrid&w=740&q=80" alt="Image 4">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJOdyPqbX7wmMbYMcEuxXeY1cR7pz4MiIrSfofUBwnk7njW5Dwn-GL2cy-&s=10" alt="Image 5">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFcl2W5IXnvMpCTNAV_1UAWOTX1ZNqj5C0HeKNda9lQ&s=10" alt="Image 6">
+  </div>
+
+                </section>
+               
+
+
+      
+  </body>
+</html>
