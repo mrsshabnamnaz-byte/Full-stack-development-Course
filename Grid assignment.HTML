@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal Content Hub</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #e8eaf0;
+        }
+
+        .container {
+            border: 3px solid #4a5568;
+            width: 800px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(4, auto);
+            gap: 6px;
+            padding: 6px;
+            background-color: #c0c8d8;
+
+            grid-template-areas:
+                "hdr  hdr  hdr  hdr  hdr"
+                "sb   spot spot spot trnd"
+                "ca   nest nest cb   cc"
+                "ftr  ftr  ftr  ftr  ftr";
+        }
+
+        .box {
+            border: 2px dashed rgba(255,255,255,0.6);
+            border-radius: 6px;
+            padding: 14px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .box .icon {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .box .title {
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .box .subtitle {
+            font-size: 0.7rem;
+            font-weight: normal;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+
+        #header {
+            grid-area: hdr;
+            background-color: #1a3a5c;
+            padding: 20px;
+        }
+
+        #header .title {
+            font-size: 1.4rem;
+        }
+
+        #sidebar {
+            grid-area: sb;
+            background-color: #2e7d32;
+        }
+
+        #spotlight {
+            grid-area: spot;
+            background-color: #e65c00;
+            padding: 30px 20px;
+        }
+
+        #spotlight .title {
+            font-size: 1.15rem;
+        }
+
+        #trending {
+            grid-area: trnd;
+            background-color: #1a3a5c;
+        }
+
+        #card-a {
+            grid-area: ca;
+            background-color: #6a1b9a;
+        }
+
+        #nested {
+            grid-area: nest;
+            background-color: #b0bec5;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 4px;
+            padding: 6px;
+            border: 2px dashed rgba(255,255,255,0.5);
+            border-radius: 6px;
+        }
+
+        #nested .nested-header {
+            grid-column: 1 / -1;
+            background-color: #90a4ae;
+            border-radius: 4px;
+            padding: 6px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #1a237e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        #nested .nested-cell {
+            background-color: #cfd8dc;
+            border-radius: 4px;
+            padding: 8px 4px;
+            text-align: center;
+            font-size: 0.68rem;
+            font-weight: bold;
+            color: #37474f;
+        }
+
+        #card-b {
+            grid-area: cb;
+            background-color: #1565c0;
+        }
+
+        #card-c {
+            grid-area: cc;
+            background-color: #6a1b9a;
+        }
+
+        #footer {
+            grid-area: ftr;
+            background-color: #1a3a5c;
+            padding: 18px;
+        }
+
+        #footer .title {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="box" id="header">
+            <span class="icon">🌐</span>
+            <div class="title">Primary Header &amp; Global Nav</div>
+            <div class="subtitle">Span: 5 Cols</div>
+        </div>
+
+        <div class="box" id="sidebar">
+            <span class="icon">👤</span>
+            <div class="title">Sidebar<br>User Dashboard<br>&amp; Controls</div>
+            <div class="subtitle">Span: 2 Rows</div>
+        </div>
+
+        <div class="box" id="spotlight">
+            <span class="icon">▶️</span>
+            <div class="title">Featured Multimedia Spotlight</div>
+            <div class="subtitle">Span: 3 Cols × 2 Rows</div>
+        </div>
+
+        <div class="box" id="trending">
+            <span class="icon">🏷️</span>
+            <div class="title">Trending<br>Articles &amp;<br>Tags</div>
+            <div class="subtitle">Span: 2 Rows</div>
+        </div>
+
+        <div class="box" id="card-a">
+            <span class="icon">☰</span>
+            <div class="title">Card A:<br>Quick Links</div>
+        </div>
+
+        <div id="nested">
+            <div class="nested-header">⊞ Secondary Focus (Nested Grid)</div>
+            <div class="nested-cell">NEWS</div>
+            <div class="nested-cell">EVENTS</div>
+            <div class="nested-cell"></div>
+            <div class="nested-cell">EVENTS</div>
+            <div class="nested-cell">BLOGS</div>
+            <div class="nested-cell">VIDEO</div>
+        </div>
+
+        <div class="box" id="card-b">
+            <span class="icon">👥</span>
+            <div class="title">Card B:<br>Social Feed</div>
+        </div>
+
+        <div class="box" id="card-c">
+            <span class="icon">▭</span>
+            <div class="title">Card C:<br>AD Slot<br>(Explicit)</div>
+        </div>
+
+        <div class="box" id="footer">
+            <div class="title">Footer</div>
+            <div class="subtitle">Global Footer &amp; Legal Links</div>
+        </div>
+
+    </div>
+</body>
+</html>
