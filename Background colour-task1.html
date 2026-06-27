@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 1 - Responsive Background Color</title>
+
+  <style>
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Cambria, Georgia, serif;
+    }
+
+    /* ================================
+       MOBILE — below 768px
+       Background: Light Pink
+    ================================ */
+    body {
+      background-color: lightpink;
+    }
+
+    /* ================================
+       TABLET — 768px to 1199px
+       Background: Light Green
+    ================================ */
+    @media (min-width: 768px) and (max-width: 1199px) {
+      body {
+        background-color: lightgreen;
+      }
+    }
+
+    /* ================================
+       DESKTOP — 1200px and above
+       Background: Light Blue
+    ================================ */
+    @media (min-width: 1200px) {
+      body {
+        background-color: lightblue;
+      }
+    }
+
+    /* ================================
+       CONTENT STYLES
+    ================================ */
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 500px;
+      line-height: 1.7;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Responsive Background Color</h1>
+    <p>Background color changes according to different screen sizes.</p>
+  </div>
+
+</body>
+</html>
