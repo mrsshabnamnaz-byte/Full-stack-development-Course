@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 2 - Responsive Image Gallery</title>
+
+  <style>
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 30px 20px 10px;
+      font-size: 2rem;
+      color: #222;
+    }
+
+    p {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    /* ================================
+            GALLERY GRID
+    ================================ */
+    .gallery {
+      display: grid;
+      gap: 15px;
+      padding: 0 20px 40px;
+
+      /* MOBILE — 1 image per row */
+      grid-template-columns: 1fr;
+    }
+
+    /* TABLET — 2 images per row */
+    @media (min-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* DESKTOP — 4 images per row */
+    @media (min-width: 1200px) {
+      .gallery {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* ================================
+             GALLERY ITEM
+    ================================ */
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #ddd;
+    }
+
+    /* ================================
+            RESPONSIVE IMAGE
+      ================================ */
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ================================
+            IMAGE CAPTION
+    ================================ */
+    .gallery-item .caption {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Responsive Image Gallery</h1>
+  <p>1 column on mobile &nbsp;|&nbsp; 2 columns on tablet &nbsp;|&nbsp; 4 columns on desktop</p>
+
+   <!-- ================================
+           GALLERY — 8 images
+     ================================ -->
+  <div class="gallery">
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1691603136890-af95b6ba3eef?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW4lMjBoaWxsfGVufDB8fDB8fHww" alt="Image 1">
+      <div class="caption">Mountain</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://cdn.mos.cms.futurecdn.net/K6WmxeWt9gT5CcQQRKUuQM-1200-80.jpg" alt="Image 2">
+      <div class="caption">Ocean</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg2DTGl6kggYmCEHESqzQZ95o4Cld6MD9y5nMx1kIwJVB_nt7e4HobaF6y&s=10" alt="Image 3">
+      <div class="caption">Forest</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOV4_TkhYDN-fzgVuYURl899seAofWjGb3gaaF9Er8numkI_FOHJISo4vu&s=10" alt="Image 4">
+      <div class="caption">Desert</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZp5-ZNM9iczL99jnlN8VwPKktFyZMTj9t6XZBZ7QEQBWigOZIrZYJVe0g&s=10" alt="Image 5">
+      <div class="caption">City</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNaL6S1kee6l9YasebvqMCqfrMOXqiuSAOuo2-h1TEGTsHaMY5dHSQSHaM&s=10" alt="Image 6">
+      <div class="caption">Autumn</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://media.istockphoto.com/id/533292615/photo/alley-in-snowy-morning.jpg?s=612x612&w=0&k=20&c=LKQgMoqdgHP5PkelvEMdwXhCMG_M1XhGoFT27-Hjrk4=" alt="Image 7">
+      <div class="caption">Snow</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1661325637349-d49eeedc4dd1?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJpdmVyJTIwd2F0ZXJ8ZW58MHx8MHx8fDA%3D" alt="Image 8">
+      <div class="caption">River</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
